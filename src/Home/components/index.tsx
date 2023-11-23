@@ -24,8 +24,8 @@ export default function MediaCard({ nome, texto, onClickOne, onClickTwo }: Media
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href={onClickOne} target="_blank" rel="noopener noreferrer">PDF</Button>
-        <Button size="small" onClick={onClickTwo}>Exemplo</Button>
+        <Button size="small" href={onClickOne} target="_blank" rel="noopener noreferrer" color='error'>PDF</Button>
+        <Button size="small" onClick={onClickTwo} color='success'>Exemplo</Button>
       </CardActions>
     </Card>
   );
