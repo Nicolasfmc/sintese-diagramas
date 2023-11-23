@@ -29,7 +29,7 @@ function Home() {
         }}
         elevation={4}
       >
-        <img src={require('../images/logoif.png')} alt="Logo IF" style={{ width: '5%', paddingLeft: 30 }} />
+        <img src={require('../images/logoif.png')} alt="Logo IF" style={{ width: '5%', minWidth: 50, paddingLeft: 30 }} />
         <Typography style={{ padding: 30 }}>Nicolas Ferreira - 2023</Typography>
       </Paper>
       <Box>
