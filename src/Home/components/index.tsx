@@ -2,16 +2,17 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 interface MediaCardProps {
   nome: string;
   texto: string;
+  onClickOne: string;
+  onClickTwo: () => void;
 }
 
-export default function MediaCard({ nome, texto }: MediaCardProps) {
+export default function MediaCard({ nome, texto, onClickOne, onClickTwo }: MediaCardProps) {
   return (
     <Card sx={{ maxWidth: 345 }} elevation={4}>
       <CardContent>
@@ -23,8 +24,8 @@ export default function MediaCard({ nome, texto }: MediaCardProps) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">PDF</Button>
-        <Button size="small">Exemplo</Button>
+        <Button size="small" href={onClickOne} target="_blank" rel="noopener noreferrer">PDF</Button>
+        <Button size="small" onClick={onClickTwo}>Exemplo</Button>
       </CardActions>
     </Card>
   );

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
+import { Box } from '@mui/system';
 
 interface CustomModalProps {
   children: React.ReactElement;
@@ -14,6 +15,15 @@ function CustomModal({
   handleClose,
   open
 }: CustomModalProps) {
+  const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 'auto',
+    height: 'auto',
+  };
+  
   return (
       <Modal
         aria-labelledby="transition-modal-title"
@@ -28,9 +38,11 @@ function CustomModal({
           },
         }}
       >
-        <Fade in={open}>
-          {children}
-        </Fade>
+        <Box sx={style}>
+          <Fade in={open}>
+            {children}
+          </Fade>
+        </Box>
       </Modal>
   );
 }
